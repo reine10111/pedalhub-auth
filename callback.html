@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Your PedalHub Account</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+        
+        .tagline {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .bike-emoji {
+            font-size: 24px;
+            margin: 0 10px;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .url-fallback {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            word-break: break-all;
+            font-family: monospace;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">🚴 PedalHub</div>
+            <div class="tagline">Your Bike Sharing Journey Starts Here</div>
+        </div>
+        
+        <h1>Welcome to PedalHub!</h1>
+        
+        <p>Hello there, future cyclist! 👋</p>
+        
+        <p>Thank you for joining PedalHub, your gateway to convenient and eco-friendly bike sharing. To get started on your cycling adventures, please confirm your email address by clicking the button below.</p>
+        
+        <div style="text-align: center; margin: 30px 0;">
+            <a href="{{ .ConfirmationURL }}" class="button">
+                <span class="bike-emoji">🚴‍♂️</span>
+                Confirm My Account
+                <span class="bike-emoji">🚴‍♀️</span>
+            </a>
+        </div>
+        
+        <p>Once confirmed, you'll be able to:</p>
+        <ul style="margin: 20px 0; padding-left: 30px;">
+            <li>🔍 Find available bikes near you</li>
+            <li>🔓 Unlock bikes instantly</li>
+            <li>📊 Track your rides and carbon savings</li>
+            <li>💳 Manage your payment methods</li>
+        </ul>
+        
+        <p>If the button above doesn't work, you can copy and paste this link into your browser:</p>
+        <div class="url-fallback">{{ .ConfirmationURL }}</div>
+        
+        <div class="footer">
+            <p><strong>Need help?</strong> We're here to support your cycling journey!</p>
+            <p>If you didn't create a PedalHub account, please ignore this email.</p>
+            <p>This confirmation link will expire in {{ .ExpiresIn }} hours.</p>
+            <p style="margin-top: 20px; text-align: center; color: #999;">
+                Happy cycling! 🌍♻️<br>
+                The PedalHub Team
+            </p>
+        </div>
+    </div>
+</body>
+</html>
